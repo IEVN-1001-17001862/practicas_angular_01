@@ -1,17 +1,20 @@
 <div>
     <h4>Elije una opcion</h4>
-    <label for="operaciones">Celsius<input type="radio" name="operaciones" [(ngModel)]="radioButton" value="Celsius"></label><br>
-    <label for="operaciones">Farenheit<input type="radio" name="operaciones" [(ngModel)]="radioButton" value="Farenheit"></label><br>
+    <label for="operaciones">Sumar<input type="radio" name="operaciones" [(ngModel)]="radioButton" value="Sumar"></label><br>
+    <label for="operaciones">Multiplicar<input type="radio" name="operaciones" [(ngModel)]="radioButton" value="Multiplicar"></label><br>
+    <label for="operaciones">Restar<input type="radio" name="operaciones" [(ngModel)]="radioButton" value="Restar"></label><br>
+    <label for="operaciones">Dividir<input type="radio" name="operaciones" [(ngModel)]="radioButton" value="Dividir"></label><br>
   </div>
   <div class="row">
       <div class="col-6">
           <div class="mb-3">
-            <br>
-              <label for="grados" class="form-label">GRADOS</label>
-              <br>
-              <input type="text" [(ngModel)]='grados' class="form-control" name="grados" placeholder="grados">
+              <label for="num1" class="form-label">Numero1</label>
+              <input type="text" [(ngModel)]='num1' class="form-control" name="num1" placeholder="Numero1">
           </div>
-          
+          <div class="mb-3">
+              <label for="num2" class="form-label">Numero2</label>
+              <input type="text" [(ngModel)]='num2' class="form-control" name="num2" placeholder="Numero2">
+          </div>
           <div class="mb-3">
               <button (click)="calcular()" class="btn btn-primary">Calcular</button>
           </div>
@@ -19,4 +22,29 @@
       <div class="col-6">
           <h2>Resultado: {{resultado}}</h2>
       </div>
+  </div>
+  
+  <div class="form-check">
+  <input class="form-check-input" [(ngModel)]="radioButton" value="Sumar" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    sumar
+  </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" [(ngModel)]="radioButton" value="restar" type="checkbox" value="" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+      Restar
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" [(ngModel)]="radioButton" value="multiplicar" type="checkbox" value="" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+      Multiplicar
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" [(ngModel)]="radioButton" value="dividir" type="checkbox" value="" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+      Dividir
+    </label>
   </div>
