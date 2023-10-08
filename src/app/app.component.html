@@ -1,11 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <app-multiplicacionxb></app-multiplicacionxb>
-</body>
-</html>
+<div class="container">
+    <form #formulario="ngForm" (ngSubmit)="procesarFormulario()">
+    <br>
+    <div class="row">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" [ngModelOptions]="{ standalone: true }" required>
+            </div>
+            <div class="form-group">
+              <label for="cantidadCompradores">Cantidad de Compradores:</label>
+              <input type="number" class="form-control" id="cantidadCompradores" [(ngModel)]="cantidadCompradores" [ngModelOptions]="{ standalone: true }" required>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="tieneTarjetaCineco" [(ngModel)]="tieneTarjetaCineco" [ngModelOptions]="{ standalone: true }" required>
+              <label class="form-check-label" for="tieneTarjetaCineco">Tiene Tarjeta Cineco</label>
+            </div>
+            <div class="form-group">
+              <label for="cantidadBoletos">Cantidad de Boletos:</label>
+              <input type="number" class="form-control" id="cantidadBoletos" [(ngModel)]="cantidadBoletos" [ngModelOptions]="{ standalone: true }" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <div style="padding: 10%; margin-left: 10px;"> <button type="submit" class="btn btn-success">Procesar</button></div>
+        </div>
+         
+  
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+  
+        <div class="form-group">
+          <label for="valorPagar">Valor a Pagar:</label>
+          <input type="number" class="form-control" id="valorPagar" [(ngModel)]="valorPagar" [ngModelOptions]="{ standalone: true }" required>
+        </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+  
+      <div class="row">
+  
+  
+      
+      </div>
+  
+    </div>
+  </form>
+  </div>
+  

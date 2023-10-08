@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MultiplicacionxbComponent } from './formularios/multiplicacionxb/multiplicacionxb.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { CinepolisComponent } from './formularios/cinepolis/cinepolis.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OperasBasComponent,
-    MultiplicacionxbComponent
+    MultiplicacionxbComponent,
+    CinepolisComponent
   ],
   imports: [
     BrowserModule,
