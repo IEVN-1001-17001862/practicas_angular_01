@@ -6,20 +6,58 @@ import { Component } from '@angular/core';
   styleUrls: ['./cinepolis.component.css']
 })
 export class CinepolisComponent {
-  // Declarar propiedades para almacenar los datos del formulario
-  nombre: string = '';
-  cantidadCompradores: number = 0;
-  tieneTarjetaCineco: boolean = false;
-  cantidadBoletos: number = 0;
-  valorPagar: number = 0;
 
-  // Función para procesar el formulario
-  procesarFormulario(formulario: any) {
-    // Realiza cualquier lógica de procesamiento necesaria aquí
-    // Puedes acceder a las propiedades del formulario (nombre, cantidadCompradores, etc.) dentro de esta función.
+  precio:number=12;
+  boletos:string='';
+  total:number=0;
+  nombre:string='';
+  descuento1:number=0;
+  descuento2:number=0;
+  totalDescuento:number=0;
+  descuentocinesco:number=0;
+  tarjetaseleccionada:string='';
+  compradores:number=0;
+  maxboletos:number=0;//variable para calcular cantidad max de boletos 
+  error:string='';
 
-    // Ejemplo: Calcular el valor a pagar en base a la cantidad de boletos
-    this.valorPagar = this.cantidadBoletos * 10; // Suponiendo un costo fijo de $10 por boleto
-
+  Calcular(){
+    this.error='';
+    //Obtenemos el maximo de boletos posibles
+    this.maxboletos=this.compradores*7;
+    
+    //Comienzan las operaciones
+    //Caso 1 : total de boletos menor a 3 no da descuento
+    if(parseInt(this.boletos) <=2 && parseInt(this.boletos) > 0){
+      this.total= parseInt(this.boletos) * this.precio;
+      this.totalDescuento=this.total;
+    }
+    //Caso 2: total de boletos mayor a 2 da un descuento del %10
+    if(parseInt(this.boletos) > 2 && parseInt(this.boletos)<6 ){
+      this.total=parseInt(this.boletos)*this.precio;
+      this.descuento1=this.total*0.10;
+      this.totalDescuento=this.total-this.descuento1;
+    }
+    //Caso 3: total boletos mayor a 5 da un descuento adicional de %15 a lo ya descontado
+    if(parseInt(this.boletos) > 5 && parseInt(this.boletos)<this.maxboletos+1){
+      this.total=parseInt(this.boletos)*this.precio;
+      this.descuento2=this.total*0.15;
+      this.totalDescuento=this.total-this.descuento2;
+    }
+    //obtenemos cual radio esta seleccionado para saber si aplicamos otro descuento
+    if(this.tarjetaseleccionada=='Si'){
+      //aplica descuento adicional del 10% por tarjeta cineco
+    this.totalDescuento =this.totalDescuento * 0.90;
+    }
+    
+    //error cuando pasan de la cantidad de boletos maxima 
+    if(parseInt(this.boletos)>this.maxboletos){
+      this.error='No se pueden comprar más de ' + this.maxboletos + ' ' + 'boletos';
+    }
+    
+  }
+  Limpiar(): void { 
+    window.location.reload(); 
+  }
 }
-}
+
+

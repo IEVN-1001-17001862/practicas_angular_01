@@ -9,12 +9,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { CinepolisComponent } from './formularios/cinepolis/cinepolis.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     OperasBasComponent,
     MultiplicacionxbComponent,
-    CinepolisComponent
+    CinepolisComponent,
+
   ],
   imports: [
     BrowserModule,
